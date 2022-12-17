@@ -1,0 +1,86 @@
+---
+title: "Everything_about_coffee"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Everything_about_coffee}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+There is data for both Arabica and Robusta beans, across many countries and professionally rated. The two most economically important varieties of coffee plant are the Arabica and the Robusta; ~60% of the coffee produced worldwide is Arabica and ~40% is Robusta. Arabica beans consist of 0.8–1.4% caffeine and Robusta beans consist of 1.7–4% caffeine.
+The dataset contains the grades the cuppers gave a sample on each of these ten attributes: Aroma, Flavor, Aftertaste, Acidity, Body, Balance, Uniformity, Clean Cup, Sweetness, Cupper Points.
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+Below is a summary of all variables in this dataset
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data(coffee)
+str(coffee)
+```
+This function will give the name of the country that produces the highest quality coffee
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data(coffee)
+Best_quality()
+```
+This function will show the n top largest coffee producers cuntries and their region. The number is n is given as an input to the function. The number for coffee production is product of two variables ; number of bags and bag weight.
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data(coffee)
+n_Largest_coffee_producer(2)
+```
+
+This function will first specify top 20 largest coffee produccer countries. Then they are sorted based on their Aroma grade form worst to best.
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+top20_producers_Aroma_sorted()
+```
+This function will produces a model that investigates linear relationship between average altitude of a location and the total score for the coffee quality
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+avg_location_altitude_totalScore()
+```
+This function compares the total score for Aroma between different methods of preparation based on Tukey's honestly significant difference test. This part will answer to the question of weather different coffee processing method will result in different aroma grade
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+Processing_method_Aroma()
+```
+
+THis function compares the total score for total coffee quality between different coffee bean color based on Tukey's honestly significant difference test
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+CoffeeBeanColor_totalQuality()
+```
+ A barplot of coffee total quality score grouped by the coffee bean color
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+colorBean_totalScore_plot()
+```
+A barplot of coffee total quality score grouped by the coffee color bean and the coffee processing method
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+processing_method_totalscore_plot()
+```
+
+A barplot of countries that are the largest coffee producers in descending order
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+Country_highestProduction_plot()
+```
+A scatter plot demonstrating the relationship between average altitude of a country and the total quality score
+```{r message= FALSE, Warning = F}
+library(CoffeeFact)
+data("coffee")
+Altitude_totalSCore_plot()
+```
+

@@ -1,0 +1,20 @@
+Package: CoffeeFact
+Title: Analyze dataset containing information about coffee!
+Version: 0.0.0.9000
+Authors@R: 
+    person("Darya", "Shokouhi Niaki", , "Shokouhinid@vcu.edu", role = c("aut", "cre"))
+Description: Reveal intersting information about coffee such as the largest coffee producers countries or if coffee bean color   and the quality of a coffee are associated. These information are displayed in fancy plots as well.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Depends: 
+    R (>= 2.10)
+LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    dplyr,
+    ggplot2
